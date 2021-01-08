@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "364591324231",
+    "project_id": "madcamp2-f5aa4",
+    "storage_bucket": "madcamp2-f5aa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364591324231:android:b5d196f3e6dff330aea562",
+        "android_client_info": {
+          "package_name": "com.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364591324231-h7vhc9pvkrhpqfi9pri05tc3pr143m0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgSXHU6Pz1JL35D6zWKLnJkVRFou0115g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364591324231-h7vhc9pvkrhpqfi9pri05tc3pr143m0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
