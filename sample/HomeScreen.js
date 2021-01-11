@@ -10,9 +10,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ContactsScreen from './ContactsScreen';
 import GalleryScreen from './GalleryScreen';
 import ChattingScreen from './ChattingScreen';
-import IndexScreen from './IndexScreen';
-import FormButton from './FormButton';
-import { AuthContext } from './AuthProvider';
+import ProfileScreen from './ProfileScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -45,8 +43,8 @@ const getHeaderTitle = (route) => {
       return 'Contacts';
     case 'GalleryScreen':
       return 'Gallery';
-    case 'MapScreen':
-      return 'Map';
+    case 'ChattingScreen':
+      return 'Chat';
     case 'TabStack':
       return 'Contacts';
   }
@@ -57,10 +55,10 @@ const TabStack = () => {
     <Tab.Navigator
       initialRouteName="ContactsScreen"
       tabBarOptions={{
-              activeTintColor: 'white',
-              inactiveTintColor: 'gray',
+              //activeTintColor: 'blue',
+              //inactiveTintColor: 'gray',
               style: {
-                backgroundColor: 'black',
+                backgroundColor: 'white',
               },
               labelStyle: {
                 textAlign: 'center',
@@ -76,7 +74,7 @@ const TabStack = () => {
             <Ionicons
                 name='person-circle-outline'
                 size={horizontal ? 20 : 25}
-                color='gray'
+                //color={{tintColor}}
             />
           ),
 
@@ -91,7 +89,7 @@ const TabStack = () => {
              <Ionicons
                 name='image-outline'
                 size={horizontal ? 20 : 25}
-                color='gray'
+                //color={{tintColor}}
              />
           ),
         }}
@@ -105,7 +103,7 @@ const TabStack = () => {
                <Ionicons
                    name='map-outline'
                    size={horizontal ? 20 : 25}
-                   color='gray'
+                   //color={{tintColor}}
                />
             ),
 
@@ -129,9 +127,9 @@ const ContactsScreenStack = ({navigation}) => {
             />
           ),
           headerStyle: {
-            backgroundColor: 'black', //Set Header color
+            backgroundColor: 'white', //Set Header color
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: 'black', //Set Header text color
           headerTitleStyle: {
             fontWeight: 'bold', //Set Header text style
           },
@@ -141,27 +139,27 @@ const ContactsScreenStack = ({navigation}) => {
   );
 };
 
-const IndexScreenStack = ({navigation}) => {
+const ProfileScreenStack = ({navigation}) => {
   return (
     <Stack.Navigator
-          initialRouteName="IndexScreen"
+          initialRouteName="ProfileScreen"
           screenOptions={{
             headerLeft: () => (
               <NavigationDrawerStructure navigationProps={navigation} />
             ),
             headerStyle: {
-              backgroundColor: 'black', //Set Header color
+              backgroundColor: 'white', //Set Header color
             },
-            headerTintColor: '#fff', //Set Header text color
+            headerTintColor: 'black', //Set Header text color
             headerTitleStyle: {
               fontWeight: 'bold', //Set Header text style
             },
           }}>
           <Stack.Screen
-            name="IndexScreen"
-            component={IndexScreen}
+            name="ProfileScreen"
+            component={ProfileScreen}
             options={{
-              title: 'Index',
+              title: 'My Profile',
             }}
           />
         </Stack.Navigator>
@@ -170,7 +168,7 @@ const IndexScreenStack = ({navigation}) => {
 
 
 
-const DrawerInclude = () => {
+const HomeScreen = () => {
   return (
       <Drawer.Navigator
         drawerContentOptions={{
@@ -184,13 +182,13 @@ const DrawerInclude = () => {
         />
 
         <Drawer.Screen
-           name="IndexScreenStack"
-           options={{drawerLabel: 'Index'}}
-           component={IndexScreenStack}
+           name="ProfileScreenStack"
+           options={{drawerLabel: 'Profile'}}
+           component={ProfileScreenStack}
         />
 
       </Drawer.Navigator>
   );
 };
 
-export default DrawerInclude;
+export default HomeScreen;
